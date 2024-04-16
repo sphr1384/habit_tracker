@@ -30,11 +30,13 @@ public class Main {
         char answer = scan.next().charAt(0);
         if (answer == 'y'){
             System.out.println("Creating task...");
-            Task task1 = user.createTask();
-            task1.start_time = 18.00;
-            task1.finish_time = 19.30;
+            System.out.println("enter task name:");
+            String taskName = scan.next(); 
+            Task task1 = user.createTask(taskName, user);
+            task1.setStartTime(18.00);
+            task1.setFinishTime(19.30);
             DecimalFormat df = new DecimalFormat("##.00");
-            System.out.println(task1.name + " duration: " + df.format(task1.getDuration()));
+            System.out.println(task1.getName() + " duration: " + df.format(task1.getDuration()));
         }
 
         // Changing username and password with setter methods
