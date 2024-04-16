@@ -1,6 +1,5 @@
 package UserPackage;
 
-import java.util.Scanner;
 import TaskPackage.Task;
 import  UtilityPackage.Utils;
 
@@ -19,13 +18,8 @@ public class User {
         this.username = username;
     }
     public void setPassword(String password) {
-        if(Utils.isPasswordValid(password) == true) {
+        if(Utils.isPasswordValid(password) == true)
             this.password = password;
-        }
-        else {
-            System.out.println("not valid");
-
-        }
     }
 
     public String getUsername() {
@@ -74,7 +68,7 @@ public class User {
         if (Utils.isValidEmail(email)){
             this.email = email;
         }
-        else System.out.println("Email is not valid");
+        else System.out.println("password is not valid");
     }
 
     private String formatName(String str){
@@ -115,28 +109,10 @@ public class User {
     }
 
     public User(String username, String password, String first_name, String last_name, String email) {
-        Scanner scan = new Scanner(System.in);
 
         setUsername(username);
         setPassword(password);
-
-        if(this.email == null) {
-            while(this.password == null) {
-                System.out.println("Enter your password again: ");
-                setPassword(scan.next());
-            }
-
-        }
-
         setEmail(email);
-        if(this.email == null) {
-            while(this.email == null) {
-                System.out.println("Enter your email again: ");
-                
-                setEmail(scan.next());
-            }
-
-        }
 
         setFirstName(first_name);        
         setLastName(last_name);    

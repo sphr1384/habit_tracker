@@ -1,6 +1,5 @@
 package TaskPackage;
 
-import java.util.Scanner;
 import java.util.regex.*;
 import UserPackage.User;
 
@@ -24,20 +23,8 @@ public class Task {
     public double getDuration() {
         return (finish_time - start_time);
     }
-
-
     public Task(String name, User user) {
-        Scanner scan = new Scanner(System.in);
         setName(name);
-        if(this.name == null) {
-            while(this.name == null) {
-                System.out.println("Enter your task name again: ");
-                
-                setName(scan.next());
-            }
-
-        }
-
         this.user = user;
         this.color = "65F23A";
     }
@@ -52,6 +39,9 @@ public class Task {
         else
             this.color = "65F23A";
     }
+
+
+
 
     public void setStartTime(double start_time) {
         if(start_time < 0)
